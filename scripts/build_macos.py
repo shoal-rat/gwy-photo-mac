@@ -84,6 +84,9 @@ def main():
     subprocess.run(["codesign", "--force", "--deep", "--sign", "-", str(app)], check=True)
     subprocess.run([str(executable), "--smoke-test"], check=True, timeout=120)
     subprocess.run([str(executable), "--cli", "--version"], check=True, timeout=120)
+    # Some macOS versions recreate FinderInfo on loaded framework directories.
+    # It is not signed content; remove it again before strict verification/archive.
+    subprocess.run(["xattr", "-cr", str(app)], check=True)
     subprocess.run(["codesign", "--verify", "--deep", "--strict", str(app)], check=True)
     archive = (
         target
