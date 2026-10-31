@@ -1,0 +1,2 @@
+# Preserve the reference model byte for byte, including CRLF and its license.
+src/gwy_photo_mac/data/haarcascade_frontalface_alt2.xml -text -diff

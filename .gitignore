@@ -1,0 +1,22 @@
+.DS_Store
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+*.spec
+local/
+# Never commit personal input/output photographs or processing reports.
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.jfif
+*.jpe
+*.png
+!docs/screenshot.png
+*.json
